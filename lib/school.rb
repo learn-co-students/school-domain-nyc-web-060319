@@ -21,20 +21,25 @@ class School
         return @roster[student_grade]
     end
 
-    def sort
-        newSchoolHash = {}
-        allKeys = @roster.keys.sort
-        allKeys.each do |keys|
-            newSchoolHash[keys] = []
-        end
+    # def sort
+    #     newSchoolHash = {}
+    #     allKeys = @roster.keys.sort
+    #     allKeys.each do |keys|
+    #         newSchoolHash[keys] = []
+    #     end
 
-        @roster.each do |grades , student_names|
-            student_names = student_names.sort
-            student_names.each do |names|
-                newSchoolHash[grades] << names
-            end
+    #     @roster.each do |grades , student_names|
+    #         student_names = student_names.sort
+    #         student_names.each do |names|
+    #             newSchoolHash[grades] << names
+    #         end
+    #     end
+    #     return newSchoolHash
+    # end
+    def sort 
+        @roster.each do |grade, student_names|
+            @roster[grade] = student_names.sort
         end
-        return newSchoolHash
     end
 end
 
